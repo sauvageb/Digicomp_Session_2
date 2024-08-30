@@ -1,4 +1,4 @@
-package fr.formation.demo.exercice1;
+package fr.sauvageboris.training.exercice1;
 
 
 // Installer les outils

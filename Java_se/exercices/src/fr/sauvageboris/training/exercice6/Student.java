@@ -1,4 +1,4 @@
-package fr.formation.demo.exercice6;
+package fr.sauvageboris.training.exercice6;
 
 public class Student {
 

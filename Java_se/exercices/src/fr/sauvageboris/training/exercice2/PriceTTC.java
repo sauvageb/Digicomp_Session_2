@@ -1,4 +1,4 @@
-package fr.formation.demo.exercice2;
+package fr.sauvageboris.training.exercice2;
 
 // Ecrire un programme qui calcule le TTC d’une paire de chaussure à 56 euros HT
 public class PriceTTC {

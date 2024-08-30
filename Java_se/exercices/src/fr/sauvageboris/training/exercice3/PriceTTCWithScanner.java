@@ -1,4 +1,4 @@
-package fr.formation.demo.exercice3;
+package fr.sauvageboris.training.exercice3;
 
 import java.io.InputStream;
 import java.math.BigDecimal;

@@ -1,4 +1,4 @@
-package fr.formation.demo.exercice4;
+package fr.sauvageboris.training.exercice4;
 
 import java.util.Scanner;
 
