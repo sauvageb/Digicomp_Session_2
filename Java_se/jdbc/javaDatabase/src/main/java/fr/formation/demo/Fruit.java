@@ -14,6 +14,11 @@ public class Fruit {
         this.expirationDate = expirationDate;
     }
 
+    public Fruit(String name, LocalDate expirationDate) {
+        this.name = name;
+        this.expirationDate = expirationDate;
+    }
+
     @Override
     public String toString() {
         return "Fruit{" +
