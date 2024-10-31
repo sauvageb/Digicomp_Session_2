@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+
 /*
  ** Consigne **
  *
@@ -46,15 +47,11 @@ class Exo2 {
 
         // solutions
         System.out.println("Your Solution : ");
-        try {
-            Optional<String> phoneNumberOptional = exo2.findPhoneNumberByNameAndPunishIfNothingFoundWithOptional(nameSearch);
-            phoneNumberOptional.get();
-        } catch (Throwable e) {
-            System.out.println(e.getMessage());
-        }
+        Optional<String> phoneNumberOptional = exo2.findPhoneNumberByNameAndPunishIfNothingFoundWithOptional(nameSearch);
+        phoneNumberOptional.orElseThrow(() -> new IllegalArgumentException("No phone number found"));
     }
 
-    public Optional<String> findPhoneNumberByNameAndPunishIfNothingFoundWithOptional(String name) throws Throwable {
+    public Optional<String> findPhoneNumberByNameAndPunishIfNothingFoundWithOptional(String name) {
         //TODO
         return null;
     }

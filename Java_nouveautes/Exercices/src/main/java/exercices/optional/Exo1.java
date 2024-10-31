@@ -44,21 +44,16 @@ class Exo1 {
         System.out.printf("PhoneNumber is %s : result searched with name %s \n", phoneNumber, nameSearch);
         String name = exo1.findNameByPhoneNumber(phoneSearch);
         System.out.printf("Name is %s : result searched with PhoneNumber %s \n", nameSearch, phoneNumber);
-
-        // solutions
-        System.out.println("Your Solution : ");
-        Optional<String> phoneNumberOptional = exo1.findPhoneNumberByNameWithOptional(nameSearch);
-        System.out.printf("PhoneNumber is %s : result searched with name %s \n", phoneNumberOptional.get(), nameSearch);
-        Optional<String> nameOptional = exo1.findNameByPhoneNumberWithOptional(phoneSearch);
-        System.out.printf("Name is %s : result searched with PhoneNumber %s \n", nameOptional.get(), phoneSearch);
     }
 
     public Optional<String> findPhoneNumberByNameWithOptional(String name) {
-        return null;
+        //TODO
+        return Optional.empty();
     }
 
     public Optional<String> findNameByPhoneNumberWithOptional(String phoneNumber) {
-        return null;
+        //TODO
+        return Optional.empty();
     }
 
     public String findPhoneNumberByName(String name) {
