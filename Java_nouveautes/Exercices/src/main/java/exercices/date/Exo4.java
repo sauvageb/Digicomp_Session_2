@@ -1,5 +1,7 @@
 package exercices.date;
 
+import java.time.LocalDate;
+
 /*
  ** Consigne **
  *
@@ -16,15 +18,20 @@ package exercices.date;
 class Exo4 {
 
     public static void main(String[] args) {
-//        Object date1 = ;
-//        Object date2 = ;
+        LocalDate date1 = null;
+        LocalDate date2 = null;
 
-//        if(date1 ... date 2){
-//            System.out.println("message");
-//        }else {
-//            System.out.println("message");
-//        }
+        if(identicalDates(date1, date2)){
+            System.out.println("date1 and date2 are identical dates");
+        }else {
+            System.out.println("date1 and date2 are different");
+        }
 
+    }
+
+    // TODO
+    public static boolean identicalDates(LocalDate date1, LocalDate date2){
+       return false;
     }
 
 

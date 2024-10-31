@@ -1,5 +1,7 @@
 package exercices.date;
 
+import java.time.LocalDate;
+
 /*
  ** Consigne **
  *
@@ -22,7 +24,7 @@ class Exo2 {
 
 
     // TODO : le type de retour doit être modifié
-    private static Object getToday() {
+    public static Object getToday() {
         return null;
     }
 

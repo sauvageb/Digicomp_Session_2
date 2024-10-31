@@ -1,8 +1,12 @@
 package exercices.date;
 
-import java.time.LocalDate;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
+import java.util.SplittableRandom;
 
 /*
  ** Consigne **
@@ -16,16 +20,16 @@ import java.util.Date;
 class Exo1 {
 
     public static void main(String[] args) {
-        Date today = getToday();
-        System.out.println("Date d'aujourd'hui :" + today);
+        System.out.println("Date d'aujourd'hui :" + getToday());
+        System.out.println("Date d'aujourd'hui :" + getTodayWithJava8());
     }
 
-    public static Date getToday() {
-        return new Date();
+    public static String getToday() {
+        return new Date().toString();
     }
 
     // TODO : le type de retour doit être modifié
-    public static Object getTodayWithJava8() {
-        return null;
+    public static String getTodayWithJava8() {
+        return "";
     }
 }
