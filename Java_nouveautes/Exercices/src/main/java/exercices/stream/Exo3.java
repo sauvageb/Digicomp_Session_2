@@ -36,7 +36,7 @@ public class Exo3 {
 
     // TODO
     public static List<String> transformWithStream(List<List<String>> collection) {
-        return null;
+       return new ArrayList<>();
     }
 
 

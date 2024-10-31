@@ -45,7 +45,7 @@ public class Exo10 {
 
     //TODO
     public static String getStringWithStream(List<Integer> list) {
-        return null;
+        return "";
     }
 
 }
