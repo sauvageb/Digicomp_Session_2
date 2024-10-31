@@ -1,5 +1,7 @@
 package exercices.date;
 
+import java.time.LocalDate;
+
 /*
  ** Consigne **
  *
@@ -13,8 +15,13 @@ package exercices.date;
 class Exo3 {
 
     public static void main(String[] args) {
-//        Object date = ;
-//        System.out.println("Date du premier jour de ma formation java 8" + date);
+        LocalDate date = getTrainingStartDate();
+        System.out.println("Date du premier jour de ma formation java 8" + date);
+    }
+
+    public static LocalDate getTrainingStartDate() {
+        // TODO
+        return LocalDate.now();
     }
 
 

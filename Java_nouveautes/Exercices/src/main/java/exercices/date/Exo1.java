@@ -1,5 +1,7 @@
 package exercices.date;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /*
@@ -22,8 +24,8 @@ class Exo1 {
         return new Date();
     }
 
-    // TODO
-//    public static Date getTodayWithJava8() {
-//        return new Date();
-//    }
+    // TODO : le type de retour doit être modifié
+    public static Object getTodayWithJava8() {
+        return null;
+    }
 }
