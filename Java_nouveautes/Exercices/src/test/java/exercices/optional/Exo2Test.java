@@ -28,11 +28,9 @@ class Exo2Test {
     // Optional version to really check
     @Test
     public void findPhoneNumberByNameAndPunishIfNothingFoundWithOptional_NameNotFound() {
-        Optional<String> phoneNumber = exo2.findPhoneNumberByNameAndPunishIfNothingFoundWithOptional("Boris Sauvage");
-        assertThat(phoneNumber).isEmpty();
-
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> phoneNumber.orElseThrow(() -> new IllegalArgumentException("No phone number found")))
+                .isThrownBy(() -> exo2.findPhoneNumberByNameAndPunishIfNothingFoundWithOptional("Boris Sauvage")
+                        .orElseThrow(() -> new IllegalArgumentException("No phone number found")))
                 .withMessage("No phone number found");
     }
 
