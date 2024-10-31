@@ -1,5 +1,8 @@
 package exercices.date;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 /*
  ** Consigne **
  *
@@ -12,8 +15,11 @@ package exercices.date;
 class Exo6 {
 
     public static void main(String[] args) {
-        Object time = null;
-        System.out.println("Heure actuelle sans la date :" + time);
+        System.out.println("Heure actuelle sans la date : " + getTime());
+    }
+
+    public static String getTime() {
+        return null;
     }
 
 }
