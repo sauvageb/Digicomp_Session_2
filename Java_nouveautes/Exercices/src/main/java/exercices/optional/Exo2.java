@@ -3,6 +3,7 @@ package exercices.optional;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 
 /*
@@ -45,15 +46,11 @@ class Exo2 {
             System.out.println(e.getMessage());
         }
 
-        // solutions
-        System.out.println("Your Solution : ");
-        Optional<String> phoneNumberOptional = exo2.findPhoneNumberByNameAndPunishIfNothingFoundWithOptional(nameSearch);
-        phoneNumberOptional.orElseThrow(() -> new IllegalArgumentException("No phone number found"));
     }
 
-    public Optional<String> findPhoneNumberByNameAndPunishIfNothingFoundWithOptional(String name) {
+    public Optional<String> findPhoneNumberByNameAndPunishIfNothingFoundWithOptional(String name) throws IllegalArgumentException {
         //TODO
-        return null;
+        return Optional.empty();
     }
 
 
