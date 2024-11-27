@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static exercices.stream.Exo4.getOldestPerson;
+import static exercices.stream.Exo4.getOldestPersonWithStream;
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -26,6 +27,6 @@ class Exo4Test {
         Person viktor = new Person("Viktor", 40);
         Person eva = new Person("Eva", 42);
         List<Person> collection = asList(sara, eva, viktor);
-        assertThat(getOldestPerson(collection)).isEqualToComparingFieldByField(eva);
+        assertThat(getOldestPersonWithStream(collection)).isEqualToComparingFieldByField(eva);
     }
 }
