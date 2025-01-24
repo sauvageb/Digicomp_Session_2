@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Accueil</title>
+    <th:block th:replace="fragments/core.html :: head"></th:block>
+</head>
+<body>
+<header th:insert="fragments/header.html :: header"></header>
+
+<h1>Accueil</h1>
+
+<p th:if="${messageKey != null and !#strings.isEmpty(messageKey)}">Msg non vide</p>
+
+<p th:text="${messageKey}"></p>
+</body>
+</html>

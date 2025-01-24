@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Création d'une opéeration</title>
+    <th:block th:replace="fragments/core.html :: head"></th:block>
+</head>
+<body>
+<header th:insert="fragments/header.html :: header"></header>
+
+<section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+    <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+        <div class="mx-auto text-center my-4">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Création d'une
+                opération</h2>
+        </div>
+
+        <form action="#" class="max-w-sm mx-auto" method="post" th:action="@{/operations/create}"
+              th:object="${newOperation}">
+
+            <div class="mb-5">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="amount">Montant</label>
+                <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                       id="amount"
+                       placeholder="300.00"
+                       required
+                       step="0.01"
+                       th:field="*{amount}" type="number"/>
+            </div>
+
+            <div class="mb-5">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="direction">Sens</label>
+                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        id="direction"
+                        th:field="*{direction}">
+                    <option th:text="ENTRANT" th:value="INCOMING"></option>
+                    <option th:text="SORTANT" th:value="OUTCOMING"></option>
+                </select>
+            </div>
+
+            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    type="submit">
+                Créer
+            </button>
+        </form>
+
+
+    </div>
+</section>
+
+</body>
+</html>
