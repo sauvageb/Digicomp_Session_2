@@ -1,3 +1,6 @@
+## Versionning :
+- https://semver.org/lang/fr/
+
 ## Spring : 
 - https://roadmap.sh/spring-boot
 - https://www.rameshfadatare.com/cheat-sheet/spring-and-spring-boot-annotations-cheat-sheet/
