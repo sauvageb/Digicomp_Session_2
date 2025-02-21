@@ -4,40 +4,31 @@ package com.training.ged.batch;
 import com.training.ged.domain.model.Document;
 import com.training.ged.domain.service.CustomerService;
 import com.training.ged.repository.DocumentRepository;
-import com.training.ged.repository.entity.DocumentEntity;
-import org.springframework.batch.core.Entity;
+import lombok.extern.java.Log;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.core.repository.JobRepository;
-import org.springframework.batch.core.repository.support.JobRepositoryFactoryBean;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import javax.sql.DataSource;
-import java.util.UUID;
-
+@Log
 @Configuration // Indique à Spring Boot que cette classe contient
 // des configurations de Bean
 public class BatchConfiguration {
 
-
     //Composants des étapes (reader, processor, writer)
     @Bean
     public FlatFileItemReader<DocumentCSV> reader() {
+        log.info("batch reading");
         return new FlatFileItemReaderBuilder<DocumentCSV>()
                 .name("documentReader")
                 .resource(new ClassPathResource("documents_batch.csv"))
@@ -47,8 +38,10 @@ public class BatchConfiguration {
                 .fieldSetMapper(new BeanWrapperFieldSetMapper<>() {{
                     setTargetType(DocumentCSV.class);
                 }})
+                .linesToSkip(1)
                 .build();
     }
+
 
     @Bean
     public DocumentCsvProcessor processor(CustomerService customerService) {

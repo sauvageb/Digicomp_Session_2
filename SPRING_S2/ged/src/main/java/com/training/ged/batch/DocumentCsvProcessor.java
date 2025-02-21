@@ -5,11 +5,8 @@ import com.training.ged.domain.model.Document;
 import com.training.ged.domain.model.DocumentStatus;
 import com.training.ged.domain.model.DocumentType;
 import com.training.ged.domain.service.CustomerService;
-import com.training.ged.repository.CustomerRepository;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.java.Log;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
@@ -20,16 +17,17 @@ import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor
-@Log4j2
+@Log
 public class DocumentCsvProcessor implements ItemProcessor<DocumentCSV, Document> {
 
     private final CustomerService customerService;
 
     @Override
     public Document process(DocumentCSV item) throws Exception {
-        log.info("Processing Batch");
+        log.info("batch processing");
         UUID customerId = UUID.fromString(item.getCustomerId());
         Optional<Customer> customerOptional = customerService.findCustomer(customerId);
+
         return Document
                 .builder()
                 .id(UUID.randomUUID())

@@ -1,4 +1,4 @@
-package com.training.ged.controller;
+package com.training.ged.test.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

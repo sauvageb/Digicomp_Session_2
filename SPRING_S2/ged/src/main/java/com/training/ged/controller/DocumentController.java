@@ -1,8 +1,8 @@
 package com.training.ged.controller;
 
+import com.training.ged.domain.model.Document;
 import com.training.ged.controller.dto.CreateDocumentForm;
 import com.training.ged.controller.dto.DocumentView;
-import com.training.ged.domain.model.Document;
 import com.training.ged.domain.service.DocumentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -21,6 +21,13 @@ import java.util.List;
 public class DocumentController {
 
     private final DocumentService documentService;
+
+    @GetMapping("/sync")
+    public RedirectView synchronizeDocuments(){
+        // Appel HTTP vers l'url de l'API du déclenchement batch
+        documentService.synchronize();
+        return new RedirectView("/documents");
+    }
 
     @GetMapping
     public String displayDocuments(Model model) {

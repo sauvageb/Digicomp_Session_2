@@ -22,7 +22,6 @@ public class DocumentEntity {
 
     @Id
     private UUID id;
-
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private CustomerEntity customer;

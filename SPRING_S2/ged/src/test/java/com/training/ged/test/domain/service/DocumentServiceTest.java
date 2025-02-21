@@ -1,9 +1,9 @@
-package com.training.ged.domain.service;
+package com.training.ged.test.domain.service;
 
 import com.training.ged.controller.dto.CreateDocumentForm;
 import com.training.ged.domain.model.Customer;
 import com.training.ged.domain.model.DocumentStatus;
-import com.training.ged.domain.model.DocumentType;
+import com.training.ged.domain.service.DocumentService;
 import com.training.ged.repository.CustomerRepository;
 import com.training.ged.repository.DocumentRepository;
 import com.training.ged.repository.entity.CustomerEntity;

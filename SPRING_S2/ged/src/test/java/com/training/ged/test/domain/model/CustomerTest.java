@@ -1,6 +1,7 @@
-package com.training.ged.domain.model;
+package com.training.ged.test.domain.model;
 
 
+import com.training.ged.domain.model.Customer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

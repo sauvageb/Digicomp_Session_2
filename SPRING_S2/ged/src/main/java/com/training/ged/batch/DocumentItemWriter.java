@@ -1,8 +1,8 @@
 package com.training.ged.batch;
 
 import com.training.ged.domain.model.Document;
-import com.training.ged.domain.service.DocumentService;
 import com.training.ged.repository.DocumentRepository;
+import com.training.ged.repository.entity.CustomerEntity;
 import com.training.ged.repository.entity.DocumentEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.item.Chunk;
@@ -22,6 +22,8 @@ public class DocumentItemWriter implements ItemWriter<Document> {
     public void write(Chunk<? extends Document> chunk) {
         List<? extends Document> documentList = chunk.getItems();
 
+
+
         List<DocumentEntity> entityList = documentList
                 .stream()
                 .map(d -> DocumentEntity
@@ -32,7 +34,11 @@ public class DocumentItemWriter implements ItemWriter<Document> {
                         .status(d.getStatus())
                         .type(d.getType())
                         .expiryDate(d.getExpiryDate())
-                        .customer(null)
+                        .customer(CustomerEntity.builder()
+                                .id(d.getCustomer().getId())
+                                .firstName(d.getCustomer().getFirstName())
+                                .lastName(d.getCustomer().getLastName())
+                                .build())
                         .build()
                 ).toList();
 
