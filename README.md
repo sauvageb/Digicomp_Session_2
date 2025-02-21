@@ -9,6 +9,9 @@
 - https://www.baeldung.com/rest-http-put-vs-post
 
 
+
+
+
 # https://github.com/sauvageb/Digicomp_Session_2
 
 # Intellij IDEA Community Edition (Java 17 + Maven)
@@ -68,3 +71,24 @@
 
 -- DDD : Domain Driven Design
 -----> Conception logicielle qui se concentre sur le métier
+
+# Dépendances utilisées
+- Lombok    -> Generer du code automatique (Boiler code)
+- @Data
+- @Builder
+- @RequiredArgsConstructor -> utilisable du mot-clé final
+- @AllArgsConstructor
+- @NoArgsConstructor
+- @Log
+- ModelMapper - MapStruct -> Conversion (D'une entitee vers un Dto par exemple...)
+
+
+# Détails Spring Boot :
+-- RestTemplate : Client HTTP pour faire des appels réseau
+-- Test unitaires/intégration : Tests techniques automatisées
+-- @Scheduled : permet de programmer le déclenchement de code java (batch, appels réseau ou autre)
+
+# Qualité de code :
+- SonarQube : Solution pour vérifier et contrôler la qualité de code
+- ArchUnit  -> Tester l'architecture technique
+
