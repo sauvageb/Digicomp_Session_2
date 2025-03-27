@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<main>
+    <form class="max-w-sm mx-auto">
+        <label for="input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Texte à convertir</label>
+        <textarea id="input" rows="4"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Votre message..."
+        ></textarea>
+
+        <label for="output" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Texte converti</label>
+        <textarea id="output" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500">
+        </textarea>
+
+        <button type="submit"
+                id="btnConvert"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-2 m-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Convertir</button>
+    </form>
+
+
+
+
+</main>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+<script src="converter.js"></script>
+</body>
+</html>
