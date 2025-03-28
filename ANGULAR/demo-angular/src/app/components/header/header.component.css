@@ -1,0 +1,75 @@
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/********** Header  *************/
+/* ajout YD */
+header {
+  height: 79px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-logo {
+  /*Taille réelle:
+  width: 189.85px;
+  height: 59.05px;*/
+  width: 61.09px;
+  height: 19px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.nav-list {
+  display: inline;
+  margin-right: 50px;
+  padding-top: 14px;
+}
+
+.nav-list:hover {
+  color: #0065FC;
+  border-top: 3px solid #0065FC;
+}
+
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) and (min-width: 320px) {
+  .main-container {
+    padding: 0px;
+  }
+
+  /********* Header********/
+  header {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .header-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header ul {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .nav-list {
+    margin-right: 0;
+    padding-bottom: 14px;
+    font-size: 16px;
+    width: 50%;
+    text-align: center;
+  }
+
+  .nav-list:hover {
+    border-width: 0;
+    border-bottom: 3px solid #0065FC;
+  }
+
+}
