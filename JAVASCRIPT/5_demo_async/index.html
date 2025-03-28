@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async</title>
+</head>
+<body>
+
+
+<button id="btnCallApi">Appel API</button>
+<div id="result"></div>
+
+
+
+<script type="text/javascript">
+    const resultArea = document.querySelector("#result");
+
+    function displayUsers(users) {
+
+        users.forEach(user => {
+            resultArea.innerHTML +=
+                `<h1>Hello ${user.name.title} ${user.name.first} ${user.name.last}</h1>
+                 <p>Email : ${user.email}</p>
+                `;
+        });
+
+    }
+
+    function calls() {
+        callApi();
+        // callApiPromise();
+    }
+
+    async function callApi() {
+        resultArea.append("Appel 1 en cours...");
+        const response = await fetch('https://randomuser.me/api/?results=5');
+        const json = await response.json();
+        const users = json.results;
+        displayUsers(users);
+    }
+
+    // async function callApiPromise() {
+    //     resultArea.append("Appel 2 en cours...");
+    //     fetch('https://randomuser.me/api/?results=5')
+    //         .then(response => response.json())
+    //         .then(json => json.results)
+    //         .then(users => displayUsers(users));
+    // }
+
+    document.querySelector("#btnCallApi").addEventListener('click', calls);
+</script>
+
+
+</body>
+</html>

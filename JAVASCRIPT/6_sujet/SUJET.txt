@@ -1,0 +1,24 @@
+Avec les technologies ci-dessous,
+- Reprendre le projet Booki
+- Votre site Booki doit afficher les hébergements via votre API
+
+BACK (API Rest) :
+- spring boot
+- @RestController + ReponseEntity.ok(body)
+- Lombok (@NoArgs, @Getter, @Setter, @Builder)
+
+FRONT :
+- html
+- css
+- javascript ( + typescript)
+- Flowbite, TailwindCSS, Bootstrap
+
+1) Faire le MCD
+2) Faire le projet Spring avec API
+3) Definir les endpoints (Swagger)
+- Recuperer tous les hebergements
+GET /accommodations
+- Recuperer tous les hebergements d'une ville
+GET /accommodations?city=Marseille
+- Recuperer toutes les activités
+GET /activities
