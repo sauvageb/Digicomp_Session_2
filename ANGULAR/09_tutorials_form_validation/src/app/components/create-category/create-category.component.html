@@ -1,0 +1,30 @@
+<h2 class="my-2">Nouvelle catégorie</h2>
+
+<!--ReactiveForm Template : formGroup, formControlName, ngSubmit -->
+<form (ngSubmit)="onCreate()" [formGroup]="categoryForm">
+  <div class="mb-3">
+    <label class="form-label" for="name">Nom</label>
+
+    <input
+      [ngClass]="{'is-invalid': f['categoryName'].invalid && (f['categoryName'].dirty || f['categoryName'].touched)}"
+      aria-describedby="name"
+      class="form-control"
+      formControlName="categoryName" id="name" type="text">
+
+    @if (f['categoryName'].invalid && (f['categoryName'].dirty || f['categoryName'].touched)) {
+
+      @if (f['categoryName'].errors?.['required']) {
+        <span class="invalid-feedback">Le champ est obligatoire.</span>
+      }
+      @if (f['categoryName'].errors?.["minlength"]) {
+        <span class="invalid-feedback">Le champ doit avoir au moins {{
+            f['categoryName'].errors?.["minlength"].requiredLength
+          }} caractères (actuellement : {{
+            f['categoryName'].errors?.["minlength"].actualLength
+          }}).</span>
+      }
+    }
+
+  </div>
+  <button [disabled]="categoryForm.invalid" class="btn btn-primary" type="submit">Ajouter</button>
+</form>

@@ -1,0 +1,11 @@
+- JDK (Java Development Kit) 17 ou 21 (Java)
+- Maven 3+
+- Postman (Tests sur les API)
+- Intellij Ultimate (License payante)
+-- Plugin "Sonarqube for IDE"
+-- Plugin "Lombok"
+- DBeaver
+- git 2.49+
+
+- Node.Js
+- NPM (Node Package Manager) inclus avec Node.Js

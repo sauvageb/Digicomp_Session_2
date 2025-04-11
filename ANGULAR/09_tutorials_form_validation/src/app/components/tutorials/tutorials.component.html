@@ -1,0 +1,38 @@
+<div class="col-lg-3 offset-lg-9">
+  <div class="form-floating">
+    <select [(ngModel)]="sortOrder" aria-label="Sort selection" class="form-select" id="sortSelect">
+      <option selected value="DESC">Plus récent</option>
+      <option value="ASC">Plus ancien</option>
+    </select>
+    <label for="sortSelect">Tri :</label>
+  </div>
+</div>
+
+<h2 class="my-2">Tutoriels</h2>
+@for (tutorial of tutorials | sortTutorialByDate: sortOrder; track tutorial.id) {
+  <div class="card my-3" appHighlight>
+    <div class="card-body">
+      <h5 class="card-title">{{ tutorial.title }}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">{{ tutorial.description }}</h6>
+      <p class="card-text text-truncate">{{ tutorial.content }}</p>
+      <div class="d-flex flex-lg-row flex-column">
+        <span
+          class="badge rounded-pill text-bg-secondary">{{ tutorial.author.lastName | uppercase }} {{ tutorial.author.firstName }}</span>
+        <span class="badge rounded-pill text-bg-secondary ms-lg-2 mt-lg-0 mt-1">{{ tutorial.author.email }}</span>
+      </div>
+      <hr class="my-4"/>
+      <div class="d-flex flex-lg-row flex-column align-items-center justify-content-between">
+        <p class="mb-0 align-self-center">En ligne depuis le {{ tutorial.createdAt | date :'fullDate' }}</p>
+        <div class="d-flex flex-lg-row flex-column">
+          <button type="button" class="btn btn-primary me-lg-2 me-0">Details</button>
+          <button type="button" class="btn btn-secondary mt-lg-0 mt-2">Partager <i class="bi bi-share-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <app-comments [parentEntityId]="tutorial.id" [comments]="tutorial.comments"></app-comments>
+    </div>
+  </div>
+}

@@ -1,0 +1,28 @@
+<p class="d-inline-flex gap-1">
+
+  <a [href]="'#'+ parentEntityId"
+     [ngClass]="{disabled: comments.length == 0}"
+     aria-expanded="false"
+     class="btn btn-primary position-relative"
+     data-bs-toggle="collapse"
+     role="button">
+           <span [hidden]="comments.length == 0"
+                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+           {{ comments.length }}</span>
+    Commentaires
+  </a>
+
+</p>
+
+<div [id]="parentEntityId" class="collapse">
+  @for (comment of comments; track comment.id) {
+
+    <figure>
+      <blockquote>{{ comment.content }}</blockquote>
+      <figcaption
+        class="blockquote-footer"> {{ comment.author.lastName | uppercase }} {{ comment.author.firstName }}
+      </figcaption>
+    </figure>
+  }
+</div>
+
